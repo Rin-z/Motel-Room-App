@@ -43,6 +43,96 @@ public class Ward {
 	@OneToOne
 	@JoinColumn(name = "districtId", referencedColumnName = "districtId", insertable = false, updatable = false)
 	private District district;
-	
+
+	public Ward() {
+		super();
+	}
+
+	public Ward(int wardId, String wardName, String kind, float latitude, float longtitude, int districtId) {
+		super();
+		this.wardId = wardId;
+		this.wardName = wardName;
+		this.kind = kind;
+		this.latitude = latitude;
+		this.longtitude = longtitude;
+		this.districtId = districtId;
+	}
+
+	public Ward(int wardId, String wardName, String kind, float latitude, float longtitude, int districtId,
+			List<MotelRoom> motelRoom, District district) {
+		super();
+		this.wardId = wardId;
+		this.wardName = wardName;
+		this.kind = kind;
+		this.latitude = latitude;
+		this.longtitude = longtitude;
+		this.districtId = districtId;
+		this.motelRoom = motelRoom;
+		this.district = district;
+	}
+
+	public int getWardId() {
+		return wardId;
+	}
+
+	public void setWardId(int wardId) {
+		this.wardId = wardId;
+	}
+
+	public String getWardName() {
+		return wardName;
+	}
+
+	public void setWardName(String wardName) {
+		this.wardName = wardName;
+	}
+
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public float getLongtitude() {
+		return longtitude;
+	}
+
+	public void setLongtitude(float longtitude) {
+		this.longtitude = longtitude;
+	}
+
+	public int getDistrictId() {
+		return districtId;
+	}
+
+	public void setDistrictId(int districtId) {
+		this.districtId = districtId;
+	}
+
+	public List<MotelRoom> getMotelRoom() {
+		return motelRoom;
+	}
+
+	public void setMotelRoom(List<MotelRoom> motelRoom) {
+		this.motelRoom = motelRoom;
+	}
+
+	public District getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(District district) {
+		this.district = district;
+	}
 	
 }

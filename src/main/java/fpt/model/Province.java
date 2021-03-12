@@ -33,5 +33,66 @@ public class Province {
 	@OneToMany
 	@JoinColumn(name = "provinceId", referencedColumnName = "provinceId", insertable = true, updatable = true)
 	private List<District> district;
+
+	public Province() {
+		super();
+	}
+
+	public Province(int provinceId, String provinceName, String kind) {
+		super();
+		this.provinceId = provinceId;
+		this.provinceName = provinceName;
+		this.kind = kind;
+	}
+
+	public Province(int provinceId, String provinceName, String kind, List<MotelRoom> motelRoom,
+			List<District> district) {
+		super();
+		this.provinceId = provinceId;
+		this.provinceName = provinceName;
+		this.kind = kind;
+		this.motelRoom = motelRoom;
+		this.district = district;
+	}
+
+	public int getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(int provinceId) {
+		this.provinceId = provinceId;
+	}
+
+	public String getProvinceName() {
+		return provinceName;
+	}
+
+	public void setProvinceName(String provinceName) {
+		this.provinceName = provinceName;
+	}
+
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+	public List<MotelRoom> getMotelRoom() {
+		return motelRoom;
+	}
+
+	public void setMotelRoom(List<MotelRoom> motelRoom) {
+		this.motelRoom = motelRoom;
+	}
+
+	public List<District> getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(List<District> district) {
+		this.district = district;
+	}
 	
 }

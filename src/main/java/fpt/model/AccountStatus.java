@@ -26,4 +26,46 @@ public class AccountStatus {
 	@OneToMany
 	@JoinColumn(name = "accountStatusId", referencedColumnName = "accountStatusId", insertable = true, updatable = true)
 	private List<Account> account;
+
+	public AccountStatus() {
+		super();
+	}
+
+	public AccountStatus(int accountStatusId, String accountStatusName) {
+		super();
+		this.accountStatusId = accountStatusId;
+		this.accountStatusName = accountStatusName;
+	}
+
+	public AccountStatus(int accountStatusId, String accountStatusName, List<Account> account) {
+		super();
+		this.accountStatusId = accountStatusId;
+		this.accountStatusName = accountStatusName;
+		this.account = account;
+	}
+
+	public int getAccountStatusId() {
+		return accountStatusId;
+	}
+
+	public void setAccountStatusId(int accountStatusId) {
+		this.accountStatusId = accountStatusId;
+	}
+
+	public String getAccountStatusName() {
+		return accountStatusName;
+	}
+
+	public void setAccountStatusName(String accountStatusName) {
+		this.accountStatusName = accountStatusName;
+	}
+
+	public List<Account> getAccount() {
+		return account;
+	}
+
+	public void setAccount(List<Account> account) {
+		this.account = account;
+	}
+	
 }
