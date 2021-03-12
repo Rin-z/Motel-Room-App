@@ -51,10 +51,128 @@ public class BillDetails {
 	@OneToOne
 	@JoinColumn(name = "billId", referencedColumnName = "billId", insertable = false, updatable = false)
 	private Bill bill;
-	
-	
-	//tlzkn,avlakfalksas
-	//a
-	//vzmnlz
 
+	public BillDetails() {
+		super();
+	}
+
+	public BillDetails(int billdetailsId, int billId, Date fromday, Date today, int billstatus, long roomrates,
+			int electtricityprirce, int waterprice, int internetprice, int provinceId) {
+		super();
+		this.billdetailsId = billdetailsId;
+		this.billId = billId;
+		this.fromday = fromday;
+		this.today = today;
+		this.billstatus = billstatus;
+		this.roomrates = roomrates;
+		this.electtricityprirce = electtricityprirce;
+		this.waterprice = waterprice;
+		this.internetprice = internetprice;
+		this.provinceId = provinceId;
+	}
+
+	public BillDetails(int billdetailsId, int billId, Date fromday, Date today, int billstatus, long roomrates,
+			int electtricityprirce, int waterprice, int internetprice, int provinceId, Bill bill) {
+		super();
+		this.billdetailsId = billdetailsId;
+		this.billId = billId;
+		this.fromday = fromday;
+		this.today = today;
+		this.billstatus = billstatus;
+		this.roomrates = roomrates;
+		this.electtricityprirce = electtricityprirce;
+		this.waterprice = waterprice;
+		this.internetprice = internetprice;
+		this.provinceId = provinceId;
+		this.bill = bill;
+	}
+
+	public int getBilldetailsId() {
+		return billdetailsId;
+	}
+
+	public void setBilldetailsId(int billdetailsId) {
+		this.billdetailsId = billdetailsId;
+	}
+
+	public int getBillId() {
+		return billId;
+	}
+
+	public void setBillId(int billId) {
+		this.billId = billId;
+	}
+
+	public Date getFromday() {
+		return fromday;
+	}
+
+	public void setFromday(Date fromday) {
+		this.fromday = fromday;
+	}
+
+	public Date getToday() {
+		return today;
+	}
+
+	public void setToday(Date today) {
+		this.today = today;
+	}
+
+	public int getBillstatus() {
+		return billstatus;
+	}
+
+	public void setBillstatus(int billstatus) {
+		this.billstatus = billstatus;
+	}
+
+	public long getRoomrates() {
+		return roomrates;
+	}
+
+	public void setRoomrates(long roomrates) {
+		this.roomrates = roomrates;
+	}
+
+	public int getElecttricityprirce() {
+		return electtricityprirce;
+	}
+
+	public void setElecttricityprirce(int electtricityprirce) {
+		this.electtricityprirce = electtricityprirce;
+	}
+
+	public int getWaterprice() {
+		return waterprice;
+	}
+
+	public void setWaterprice(int waterprice) {
+		this.waterprice = waterprice;
+	}
+
+	public int getInternetprice() {
+		return internetprice;
+	}
+
+	public void setInternetprice(int internetprice) {
+		this.internetprice = internetprice;
+	}
+
+	public int getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(int provinceId) {
+		this.provinceId = provinceId;
+	}
+
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
+	}
+	
 }

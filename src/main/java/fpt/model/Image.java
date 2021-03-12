@@ -27,5 +27,56 @@ public class Image {
 	@OneToOne
 	@JoinColumn(name = "roomId", referencedColumnName = "roomId", insertable = false, updatable = false)
 	private MotelRoom motelRoom;
+
+	public Image() {
+		super();
+	}
+
+	public Image(int imageId, String url, int roomId) {
+		super();
+		this.imageId = imageId;
+		this.url = url;
+		this.roomId = roomId;
+	}
+
+	public Image(int imageId, String url, int roomId, MotelRoom motelRoom) {
+		super();
+		this.imageId = imageId;
+		this.url = url;
+		this.roomId = roomId;
+		this.motelRoom = motelRoom;
+	}
+
+	public int getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(int imageId) {
+		this.imageId = imageId;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public int getRoomId() {
+		return roomId;
+	}
+
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
+	}
+
+	public MotelRoom getMotelRoom() {
+		return motelRoom;
+	}
+
+	public void setMotelRoom(MotelRoom motelRoom) {
+		this.motelRoom = motelRoom;
+	}
 	
 }
