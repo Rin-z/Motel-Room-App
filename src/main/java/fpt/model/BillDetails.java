@@ -53,7 +53,7 @@ public class BillDetails {
 	private Bill bill;
 	
 	
-	
+	//sth con cec
 	
 
 }
