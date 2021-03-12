@@ -55,6 +55,5 @@ public class BillDetails {
 	
 	//tlzkn,avlakfalksas
 	//a
-	//a
 
 }
