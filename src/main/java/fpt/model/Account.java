@@ -132,5 +132,6 @@ public class Account {
 	public void setMotelRoom(List<MotelRoom> motelRoom) {
 		this.motelRoom = motelRoom;
 	}
-	
+
+	// vu mll
 }
