@@ -42,10 +42,6 @@ public class AccountInfo {
 	
 	@Column(name = "districtId")
 	private int districtId;
-
-	@OneToOne
-	@JoinColumn(name = "email", referencedColumnName = "email", insertable = false, updatable = false)
-	private Email emailtb;
 	
 	@OneToMany
 	@JoinColumn(name = "accountInfoId", referencedColumnName = "accountInfoId", insertable = true, updatable = true)
@@ -69,7 +65,7 @@ public class AccountInfo {
 	}
 
 	public AccountInfo(int accountInfoId, String name, Date birthday, int gender, String phone, String email,
-			int provinceId, int districtId, Email emailtb, List<Account> account) {
+			int provinceId, int districtId, List<Account> account) {
 		super();
 		this.accountInfoId = accountInfoId;
 		this.name = name;
@@ -79,7 +75,6 @@ public class AccountInfo {
 		this.email = email;
 		this.provinceId = provinceId;
 		this.districtId = districtId;
-		this.emailtb = emailtb;
 		this.account = account;
 	}
 
@@ -145,14 +140,6 @@ public class AccountInfo {
 
 	public void setDistrictId(int districtId) {
 		this.districtId = districtId;
-	}
-
-	public Email getEmailtb() {
-		return emailtb;
-	}
-
-	public void setEmailtb(Email emailtb) {
-		this.emailtb = emailtb;
 	}
 
 	public List<Account> getAccount() {
