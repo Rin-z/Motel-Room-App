@@ -41,7 +41,7 @@ public class Ward {
 	private List<MotelRoom> motelRoom;
 	
 	@OneToOne
-	@JoinColumn(name = "districtId1", referencedColumnName = "districtId", insertable = false, updatable = false)
+	@JoinColumn(name = "districtId", referencedColumnName = "districtId", insertable = false, updatable = false)
 	private District district;
 	
 	
