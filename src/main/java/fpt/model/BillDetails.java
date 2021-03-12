@@ -54,8 +54,6 @@ public class BillDetails {
 	
 	
 	//tlzkn,avlakfalksas
-	//assfxvzxcv
-	//vmansldkallll
-	///hello
+	
 
 }
