@@ -15,37 +15,37 @@ import org.hibernate.annotations.Type;
 @Entity
 @Table(name = "AccountInfo")
 public class AccountInfo {
-	
+
 	@Id
 	@Column(name = "accountInfoId")
 	private int accountInfoId;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "birthday")
 	@Type(type = "date")
 	private Date birthday;
-	
+
 	@Column(name = "gender")
 	private int gender;
-	
+
 	@Column(name = "phone")
 	private String phone;
-	
+
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "provinceId")
 	private int provinceId;
-	
+
 	@Column(name = "districtId")
 	private int districtId;
-	
+
 	@OneToMany
 	@JoinColumn(name = "accountInfoId", referencedColumnName = "accountInfoId", insertable = true, updatable = true)
 	private List<Account> account;
-	
+
 	public AccountInfo() {
 		super();
 	}
@@ -148,5 +148,9 @@ public class AccountInfo {
 	public void setAccount(List<Account> account) {
 		this.account = account;
 	}
-	
+
+	@Override
+	public String toString() {
+		return accountInfoId + "" + name + "" + birthday + "" + gender + "" + phone + "" + email ; 
+	}
 }
