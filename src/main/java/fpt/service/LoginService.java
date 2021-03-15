@@ -12,13 +12,17 @@ public class LoginService {
 	@Autowired
 	private AccountRepository accountRepository;
 	
-	private String login(Account account) {
-		return accountRepository.findOneByAccountIdAndPassword(account.getAccountId(), account.getPassword()).getAccountId();
+//	public Account login(String username, String password) {
+//		return accountRepository.findOneByAccountUsernameAndPassword(username, password);
+//	}
+//	
+	public Account find(int id) {
+		return accountRepository.findOne(id);
 	}
 	
-	private String findOneByAccountId(String accountId) {
-		return accountRepository.findOneByAccountId(accountId).getAccountId();
-	}
+//	public Account findOneByAccountId(int accountId) {
+//		return accountRepository.findOneByAccountId(accountId).get(0);
+//	}
 	
-	//private List<Account>
+	
 }
