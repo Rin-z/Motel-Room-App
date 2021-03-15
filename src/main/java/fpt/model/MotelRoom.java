@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "MotelRoom")
-public class MotelRoom {
+public class MotelRoom extends ModelCommon {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

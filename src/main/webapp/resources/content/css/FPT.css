@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300&display=swap');
+
+body {
+    padding-top: 9.5rem;
+    padding-right: 23rem;
+    padding-left: 23rem;
+    margin: 0;
+    background: linear-gradient(to right,rgb(132, 140, 148),rgb(132, 140, 148,0)) ;
+    position: relative;
+}
+.cont1{
+    border:2px solid red;
+}
+.fr2{
+    position: absolute;
+    left: 10%;
+    top:10%;
+}
+.logo span{
+    font-size: 3rem;
+    font-weight: bold;
+    color:rgb(196, 4, 4);
+    font-family: 'Playball', cursive;
+}
+.room{
+position: absolute;
+left:1.75rem;
+/* left:5.25rem; */
+transition: all 500ms ease-in-out;
+}
+.find{
+    position: absolute;
+    left: 0;
+}
+
+.find::before{
+    position: absolute;
+    content: 'ind';
+    color:black;
+    left:1.35rem;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 500ms ease-in-out;
+}
+
+.logo:hover .find::before{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.logo:hover .room{
+    position: absolute;
+    left:5.3rem;
+}
+
+.room::before{
+    position: absolute;
+    content: "oom";
+    left: 1.75rem;
+    color:black;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+.logo:hover .room::before{
+    opacity: 1;
+}
+
+#log-regSection{
+    padding: 0;
+    height: 65vh;
+    min-height: 430px;
+    min-width: 800px;
+   background : linear-gradient(to right,rgb(202, 199, 199),rgb(202, 199, 199,0.5));
+   position: relative;
+   border-radius: 1rem;
+   box-shadow: 0 0 10px black;
+   margin: auto;
+}
+.form-dn-dk{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+.form-dn-dk button:hover{
+    opacity: 0.7 ;
+}
+.form-dn-dk a:active{
+    color: black;
+}
+
+.form-dn-dk a{
+    position: relative;
+    color:black;
+}
+.form-dn-dk a::before{
+    position: absolute;
+    content: '';
+    top: 90%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color:black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all .5s ease-in-out;
+}
+.form-dn-dk a:hover::before{
+    transform: scaleX(1);
+}
+
+.form-dk{
+    grid-column: 2/3;
+     margin-left: 3rem;
+}
+.bg-left{
+    position: absolute;
+    border-radius: 1rem;
+    top: 0;
+    bottom: 0;
+    left:50%;
+    right:0;
+    background-image : url("img/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: all 1000ms ease-in-out;
+}
+/* .bg-left:hover{
+    top: 0;
+    bottom: 0;
+    left:50%;
+    right:0;
+} */
+.form-dn{
+    grid-column: 1/2;
+    margin-left: 3rem;
+    transition: all 1000ms ease-in-out;
+}
+.form-dn h1{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.form-dn input{
+    border: none;
+    outline: none;
+    height: 3rem;
+    background-color: rgb(202, 199, 199,0);
+    width: 85%;
+    border-bottom: 1px solid rgb(133, 133, 133) ;
+
+}
+
+.form-dn button{
+    margin-top: 1.5rem;
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    border: none;
+    font-weight: 600;
+    color:white;
+    background-color: black;
+    outline: none;
+    transition:  all .25s ease-in-out;
+}
+.form-dn .form-reg{
+    position: absolute;
+    bottom: 30%;
+    text-decoration: none;
+}
+
+.form-dk h1{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.form-dk input{
+    border: none;
+    outline: none;
+    height: 3rem;
+    background-color: rgb(202, 199, 199,0);
+    width: 85%;
+    border-bottom: 1px solid rgb(133, 133, 133) ;
+
+}
+.form-dk button{
+    margin-top: 1.5rem;
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    border: none;
+    font-weight: 600;
+    color:white;
+    background-color: black;
+    outline: none;
+    transition:  all .25s ease-in-out;
+}
+.form-dk a{
+    margin-left: 1.75rem;
+    text-decoration: none;
+}
+
+.contain{
+    position: relative;
+}
+
+
+.contain .line{
+    position: absolute;
+    top: 66%;
+    bottom: -32%;
+    left: 0;
+    right: 12.5%;   
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:  all .5s ease-in-out;
+}
+
+.contain input:focus ~ .line{
+    transform: scaleX(1);
+}
+
+::placeholder {
+  opacity: 0.8;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
