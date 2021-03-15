@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
-
 @Entity
 @Table(name = "Post")
 public class Post {
@@ -21,22 +19,24 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "postId")
 	private int postId;
-	
-	@Column(name = "description")
-	private String description;
-	
-	@Column(name = "postDate")
-	@Type(type = "date")
+
+	@Column(name = "postDate", columnDefinition = "date not null")
 	private Date postDate;
 	
-	@Column(name = "postStatus")
-	private int postStatus;
+	@Column(name = "postStatus", columnDefinition = "bit not null")
+	private boolean postStatus;
 	
-	@Column(name = "postTitle")
+	@Column(name = "postTitle", columnDefinition = "nvarchar(150)")
 	private String postTitle;
+	
+	@Column(name = "description", columnDefinition = "nvarchar(255)")
+	private String description;
 	
 	@Column(name = "postView")
 	private int postView;
+	
+	@Column(name = "accountId")
+	private int accountId;
 	
 	@Column(name = "roomId")
 	private int roomId;
@@ -44,34 +44,41 @@ public class Post {
 	@OneToOne
 	@JoinColumn(name = "roomId", referencedColumnName = "roomId", insertable = false, updatable = false)
 	private MotelRoom motelRoom;
+	
+	@OneToOne
+	@JoinColumn(name = "accountId", referencedColumnName = "accountId", insertable = false, updatable = false)
+	private Account account;
 
 	public Post() {
 		super();
 	}
 
-	public Post(int postId, String description, Date postDate, int postStatus, String postTitle, int postView,
-			int roomId) {
+	public Post(int postId, Date postDate, boolean postStatus, String postTitle, String description, int postView,
+			int accountId, int roomId) {
 		super();
 		this.postId = postId;
-		this.description = description;
 		this.postDate = postDate;
 		this.postStatus = postStatus;
 		this.postTitle = postTitle;
+		this.description = description;
 		this.postView = postView;
+		this.accountId = accountId;
 		this.roomId = roomId;
 	}
 
-	public Post(int postId, String description, Date postDate, int postStatus, String postTitle, int postView,
-			int roomId, MotelRoom motelRoom) {
+	public Post(int postId, Date postDate, boolean postStatus, String postTitle, String description, int postView,
+			int accountId, int roomId, MotelRoom motelRoom, Account account) {
 		super();
 		this.postId = postId;
-		this.description = description;
 		this.postDate = postDate;
 		this.postStatus = postStatus;
 		this.postTitle = postTitle;
+		this.description = description;
 		this.postView = postView;
+		this.accountId = accountId;
 		this.roomId = roomId;
 		this.motelRoom = motelRoom;
+		this.account = account;
 	}
 
 	public int getPostId() {
@@ -82,14 +89,6 @@ public class Post {
 		this.postId = postId;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public Date getPostDate() {
 		return postDate;
 	}
@@ -98,11 +97,11 @@ public class Post {
 		this.postDate = postDate;
 	}
 
-	public int getPostStatus() {
+	public boolean isPostStatus() {
 		return postStatus;
 	}
 
-	public void setPostStatus(int postStatus) {
+	public void setPostStatus(boolean postStatus) {
 		this.postStatus = postStatus;
 	}
 
@@ -114,12 +113,28 @@ public class Post {
 		this.postTitle = postTitle;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public int getPostView() {
 		return postView;
 	}
 
 	public void setPostView(int postView) {
 		this.postView = postView;
+	}
+
+	public int getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 
 	public int getRoomId() {
@@ -136,6 +151,14 @@ public class Post {
 
 	public void setMotelRoom(MotelRoom motelRoom) {
 		this.motelRoom = motelRoom;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 	
 }
