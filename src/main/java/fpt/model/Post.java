@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Post")
-public class Post {
+public class Post extends ModelCommon {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
