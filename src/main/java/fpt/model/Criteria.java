@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Criteria")
 public class Criteria {
-	
+	//a
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "criteriaId")
