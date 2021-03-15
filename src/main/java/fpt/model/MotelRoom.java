@@ -21,7 +21,10 @@ public class MotelRoom {
 	@Column(name = "roomId")
 	private int roomId;
 	
-	@Column(name = "roomName")
+	@Column(name = "roomStatus", columnDefinition = "bit not null")
+	private boolean roomStatus;
+	
+	@Column(name = "roomName", columnDefinition = "nvarchar(50)")
 	private String roomName;
 	
 	@Column(name = "acreage")
@@ -29,6 +32,9 @@ public class MotelRoom {
 	
 	@Column(name = "price")
 	private int price;
+	
+	@Column(name = "address", columnDefinition = "nvarchar(150)")
+	private String address;
 	
 	@Column(name = "provinceId")
 	private int provinceId;
@@ -39,17 +45,11 @@ public class MotelRoom {
 	@Column(name = "wardId")
 	private int wardId;
 	
-	@Column(name = "address")
-	private String address;
-	
-	@Column(name = "statusId")
-	private int statusId;
-	
 	@Column(name = "maxPeople")
 	private int maxPeople;
 	
 	@Column(name = "accountId")
-	private String accountId;
+	private int accountId;
 	
 	@OneToOne
 	@JoinColumn(name = "accountId", referencedColumnName = "accountId", insertable = false, updatable = false)
@@ -77,51 +77,42 @@ public class MotelRoom {
 	
 	@OneToMany
 	@JoinColumn(name = "roomId", referencedColumnName = "roomId", insertable = true, updatable = true)
-	private List<Bill> bill;
-	
-	@OneToMany
-	@JoinColumn(name = "roomId", referencedColumnName = "roomId", insertable = true, updatable = true)
-	private List<Renter> renter;
-	
-	@OneToMany
-	@JoinColumn(name = "roomId", referencedColumnName = "roomId", insertable = true, updatable = true)
 	private List<Post> post;
 
 	public MotelRoom() {
 		super();
 	}
 
-	public MotelRoom(int roomId, String roomName, int acreage, int price, int provinceId, int districtId, int wardId,
-			String address, int statusId, int maxPeople, String accountId, District district) {
+	public MotelRoom(int roomId, boolean roomStatus, String roomName, int acreage, int price, String address,
+			int provinceId, int districtId, int wardId, int maxPeople, int accountId) {
 		super();
 		this.roomId = roomId;
+		this.roomStatus = roomStatus;
 		this.roomName = roomName;
 		this.acreage = acreage;
 		this.price = price;
+		this.address = address;
 		this.provinceId = provinceId;
 		this.districtId = districtId;
 		this.wardId = wardId;
-		this.address = address;
-		this.statusId = statusId;
 		this.maxPeople = maxPeople;
 		this.accountId = accountId;
-		this.district = district;
 	}
 
-	public MotelRoom(int roomId, String roomName, int acreage, int price, int provinceId, int districtId, int wardId,
-			String address, int statusId, int maxPeople, String accountId, Account account, List<Image> image,
-			List<MotelRoom_Criteria> motelRoom_Criteria, Province province, District district, Ward ward,
-			List<Bill> bill, List<Renter> renter, List<Post> post) {
+	public MotelRoom(int roomId, boolean roomStatus, String roomName, int acreage, int price, String address,
+			int provinceId, int districtId, int wardId, int maxPeople, int accountId, Account account,
+			List<Image> image, List<MotelRoom_Criteria> motelRoom_Criteria, Province province, District district,
+			Ward ward, List<Post> post) {
 		super();
 		this.roomId = roomId;
+		this.roomStatus = roomStatus;
 		this.roomName = roomName;
 		this.acreage = acreage;
 		this.price = price;
+		this.address = address;
 		this.provinceId = provinceId;
 		this.districtId = districtId;
 		this.wardId = wardId;
-		this.address = address;
-		this.statusId = statusId;
 		this.maxPeople = maxPeople;
 		this.accountId = accountId;
 		this.account = account;
@@ -130,8 +121,6 @@ public class MotelRoom {
 		this.province = province;
 		this.district = district;
 		this.ward = ward;
-		this.bill = bill;
-		this.renter = renter;
 		this.post = post;
 	}
 
@@ -141,6 +130,14 @@ public class MotelRoom {
 
 	public void setRoomId(int roomId) {
 		this.roomId = roomId;
+	}
+
+	public boolean isRoomStatus() {
+		return roomStatus;
+	}
+
+	public void setRoomStatus(boolean roomStatus) {
+		this.roomStatus = roomStatus;
 	}
 
 	public String getRoomName() {
@@ -167,6 +164,14 @@ public class MotelRoom {
 		this.price = price;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public int getProvinceId() {
 		return provinceId;
 	}
@@ -191,22 +196,6 @@ public class MotelRoom {
 		this.wardId = wardId;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public int getStatusId() {
-		return statusId;
-	}
-
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
-	}
-
 	public int getMaxPeople() {
 		return maxPeople;
 	}
@@ -215,11 +204,11 @@ public class MotelRoom {
 		this.maxPeople = maxPeople;
 	}
 
-	public String getAccountId() {
+	public int getAccountId() {
 		return accountId;
 	}
 
-	public void setAccountId(String accountId) {
+	public void setAccountId(int accountId) {
 		this.accountId = accountId;
 	}
 
@@ -269,22 +258,6 @@ public class MotelRoom {
 
 	public void setWard(Ward ward) {
 		this.ward = ward;
-	}
-
-	public List<Bill> getBill() {
-		return bill;
-	}
-
-	public void setBill(List<Bill> bill) {
-		this.bill = bill;
-	}
-
-	public List<Renter> getRenter() {
-		return renter;
-	}
-
-	public void setRenter(List<Renter> renter) {
-		this.renter = renter;
 	}
 
 	public List<Post> getPost() {
