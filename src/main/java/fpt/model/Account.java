@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Account")
-public class Account {
+public class Account extends ModelCommon {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -214,5 +214,4 @@ public class Account {
 	public void setPost(List<Post> post) {
 		this.post = post;
 	}
-	//z
 }
