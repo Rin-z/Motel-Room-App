@@ -21,7 +21,7 @@ public class Ward {
 	@Column(name = "wardId")
 	private int wardId;
 	
-	@Column(name = "wardName")
+	@Column(name = "wardName", columnDefinition = "varchar(150)")
 	private String wardName;
 	
 	@Column(name = "kind")

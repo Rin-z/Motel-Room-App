@@ -20,15 +20,11 @@ public class Province {
 	@Column(name = "provinceId")
 	private int provinceId;
 	
-	@Column(name = "provinceName")
+	@Column(name = "provinceName", columnDefinition = "varchar(20) not null")
 	private String provinceName;
 	
 	@Column(name = "kind")
 	private String kind;
-	
-	@OneToMany
-	@JoinColumn(name = "provinceId", referencedColumnName = "provinceId", insertable = true, updatable = true)
-	private List<MotelRoom> motelRoom;
 	
 	@OneToMany
 	@JoinColumn(name = "provinceId", referencedColumnName = "provinceId", insertable = true, updatable = true)
@@ -45,13 +41,12 @@ public class Province {
 		this.kind = kind;
 	}
 
-	public Province(int provinceId, String provinceName, String kind, List<MotelRoom> motelRoom,
+	public Province(int provinceId, String provinceName, String kind,
 			List<District> district) {
 		super();
 		this.provinceId = provinceId;
 		this.provinceName = provinceName;
 		this.kind = kind;
-		this.motelRoom = motelRoom;
 		this.district = district;
 	}
 
@@ -77,14 +72,6 @@ public class Province {
 
 	public void setKind(String kind) {
 		this.kind = kind;
-	}
-
-	public List<MotelRoom> getMotelRoom() {
-		return motelRoom;
-	}
-
-	public void setMotelRoom(List<MotelRoom> motelRoom) {
-		this.motelRoom = motelRoom;
 	}
 
 	public List<District> getDistrict() {

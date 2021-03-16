@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="resources/content/css/FPT.css">
+    <link rel="stylesheet" href="resources/content/css/login.css">
     
 </head>
 <body>
@@ -39,7 +39,7 @@
                                    </div>
                                    <!-- <h3>Mật khẩu</h3> -->
                                    <div class="contain">
-                                          <input type="text"  name="txtpassword" id="input" class="email" placeholder="Mật khẩu..." value="${password }">
+                                          <input type="password"  name="txtpassword" id="input" class="email" placeholder="Mật khẩu..." value="${password }">
                                           <p class="line"></p>
                                    </div>
                                    <button type="submit" class="btn-dk">Đăng nhập</button>
