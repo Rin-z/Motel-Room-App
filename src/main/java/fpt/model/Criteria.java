@@ -20,7 +20,7 @@ public class Criteria {
 	@Column(name = "criteriaId")
 	private int criteriaId;
 	
-	@Column(name = "criteriaName")
+	@Column(name = "criteriaName", columnDefinition = "varchar(50)")
 	private String criteriaName;
 	
 	@OneToMany

@@ -1,0 +1,1451 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300&display=swap');
+
+.cont1{
+    border:2px solid red;
+}
+
+#headerSection{
+    height: 100vh;
+    background-image: url("img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr ;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.welcome{
+    font-family: 'Crimson Text', serif;
+}
+
+nav{
+    grid-row: 1/2;
+}
+
+.bgnav {
+    position: absolute;
+    height: 2rem;
+    background: linear-gradient(to top,rgb(0,0,0,0.3),rgb(0,0,0,0));
+   
+}
+#headerSection .navbar1{
+    padding: 0;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.25fr ;
+    height: 2rem;   
+    position: absolute;
+    top:0;
+}
+
+
+.navbar1 small{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    grid-column:2/5 ;
+}
+
+.infoNav{
+    position: relative;
+    grid-column: 7/9;
+    justify-content: flex-end;
+}
+
+
+svg{
+    position: absolute;
+    top:5px;
+}
+
+.email:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+.email{
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+
+.email::before{
+     position: absolute;
+    content: 'Dangduyvu@gmail.com';
+    top:2rem;
+    bottom: -1.5rem;
+    left:-4.25rem;
+    right: 0;
+    background-color: black;
+    width: 10rem;
+    color:white;
+    border-radius: .25rem;
+    font-size: small;
+    text-align: center;
+    transform: scaleY(0 );
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+
+.email:hover::before
+{
+    transform: scaleY(1);
+}
+
+
+.phone{
+    position: relative;
+     transition: all 500ms ease-in-out;
+     margin:0 30%;
+}
+.phone::before{
+    position: absolute;
+    content: '0123456789';
+    top:2rem;
+    bottom: -1.5rem;
+    left:-2.5rem;
+    right: 0;
+    background-color: black;
+    width: 6rem;
+    color:white;
+    font-size: small;
+    border-radius: .25rem;
+    text-align: center;
+    transform: scaleY(0 );
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+
+.phone:hover::before{
+    transform: scaleY(1);
+}
+.phone:hover{
+    color:white;
+}
+
+
+.facebook{
+    position: relative;
+     transition: all 500ms ease-in-out;
+}
+.facebook::before{
+    position: absolute;
+    content: 'DangDuyVuDepTraiProNo1';
+    top:2rem;
+    bottom: -1.5rem;
+    left:-4.25rem;
+    right: 0;
+    background-color: black;
+    width: 10rem;
+    color:white;
+    font-size: small;
+    text-align: center;
+    border-radius: .25rem;
+    transform: scaleY(0 );
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+
+.facebook:hover::before{
+    transform: scaleY(1);
+}
+.facebook:hover{
+    color:white;
+}
+
+.navbar2{
+    grid-row: 2/3;
+    position: absolute;
+    display: grid;
+    grid-template-columns:0.9fr 1fr 1fr 1fr 1fr 0.5fr 1.7fr 0.94fr;
+    top:2rem;
+    height: 6rem;
+}
+
+.navbar3{
+    grid-row: 1/2;
+    position: fixed;
+    display: grid;
+    grid-template-columns:0.9fr 1fr 1fr 1fr 1fr 0.5fr 1.7fr 0.94fr;
+    top:0;
+    height: 6rem;
+    background-color: rgb(19, 18, 18);
+    opacity: 0;
+    height: 0;
+    transition: all .5s ease-in-out;
+}
+.navbar3 .find::before{
+    color:white;
+}
+.navbar3 .room::before{
+    color:white;
+}
+.navbar3 .home::before{
+    background-color: white;
+}
+.navbar3 .login::before{
+    background-color: white;
+}
+.navbar3 .register::before{
+    background-color: white;    
+}
+
+.logo{
+    grid-column: 2/3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo span{
+    font-size: 3rem;
+    font-weight: bold;
+    color:rgb(196, 4, 4);
+    font-family: 'Playball', cursive;
+}
+.room{
+position: absolute;
+left:1.75rem;
+/* left:5.25rem; */
+transition: all 500ms ease-in-out;
+}
+.find{
+    position: absolute;
+    left: 0;
+}
+
+.find::before{
+    position: absolute;
+    content: 'ind';
+    color:black;
+    left:1.35rem;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 500ms ease-in-out;
+}
+
+.logo:hover .find::before{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.logo:hover .room{
+    position: absolute;
+    left:5.3rem;
+}
+
+.room::before{
+    position: absolute;
+    content: "oom";
+    left: 1.75rem;
+    color:black;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+.logo:hover .room::before{
+    opacity: 1;
+}
+
+
+.home-log-reg{
+    grid-column: 5/8;
+    padding: 0;
+}
+
+.home-log-reg div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+
+.login{
+    margin-left: 8%;
+    margin-right: 8%;
+    position: relative;
+}
+.home,.register{
+    position: relative;
+}
+
+.home a,.login a,.register a{
+    color:rgb(51, 51, 51);
+}
+
+
+
+.home:hover a{
+    text-decoration: none;
+}
+.login:hover a{
+    text-decoration: none;
+}
+.register:hover a{
+    text-decoration: none;
+}
+
+.home:hover::before{
+    transform: scaleX(1);
+}
+.login:hover::before{
+    transform: scaleX(1);
+}
+.register:hover::before{
+    transform: scaleX(1);
+}
+
+.home::before{
+    content: "";
+    position: absolute;
+    top:3.7rem;
+    bottom: 2.2rem;
+    left: 0;
+    right: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 500ms ease-in-out;
+}
+.login::before,.register::before{
+    content: "";
+    position: absolute;
+    top:3.7rem;
+    bottom: 2.2rem;
+    left: 0;
+    right: 0;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 500ms ease-in-out;
+}
+
+.location{
+    margin: 0;
+    grid-column: 2/5;
+    grid-row: 6/15;
+    color:white;
+    position: relative;
+}
+
+.bg-form{
+    position: absolute;
+    background-color: rgb(0,0,0,0.6);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.book-form{
+    position: absolute;
+    z-index: 1;
+}
+
+.book-form h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+.book-form small{
+    font-family: 'Poppins', sans-serif;
+    text-transform: none;
+    font-size:1.25rem;
+}
+
+.book-form p{
+
+    text-transform: none;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+::-webkit-scrollbar{
+    width:15px;
+}
+::-webkit-scrollbar-track{
+    background-color:white;
+    box-shadow: inset 0 0 5px gray;
+    border-radius: .25rem;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0,0,0,0.2);
+     border-radius: .25rem;
+}
+::-webkit-scrollbar-thumb:hover{
+     background-color: rgb(0,0,0,0.3);
+}
+
+.book-form .drop-btn-TT,.drop-btn-QH{
+    margin-top: 8px;
+    position: relative;
+}
+.book-form .btn-tinh,.btn-huyen{
+    width:100%;
+    border-radius: .25rem;
+    background-color: white;
+    text-align: left;
+    text-transform: none;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+    position: relative;
+}
+
+.btn-tinh::before,.btn-huyen::before{
+    content: '';
+    position: absolute;
+    background-color: black;
+    left:93%;
+    right: 4%;
+    top: 42% ;
+    bottom: 42%;
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    transition: all 500ms ease-in-out;
+}
+
+.dropdown-TT{
+    position: absolute;
+    height:11rem;
+    width: 100%;
+    background-color: white;
+    border-radius: .25rem;
+    z-index: 1;
+    overflow: auto;
+    white-space: nowrap;
+    transform: scaleY(0);
+    opacity:0 ;
+    transform-origin: top right;
+    transition: all 500ms ease-in-out  ;
+}
+.btn-tinh:focus ~ .dropdown-TT{
+    transform: scaleY(1);
+    opacity: 1;
+}
+.btn-tinh:focus::before{
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+.btn-huyen:focus::before{
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.dropdown-TT a{
+    display: block;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: black;
+    text-transform: none;
+}
+.dropdown-TT a:hover{
+    text-decoration: none;;
+}
+
+
+.dropdown-TT a:nth-child(even) {
+    background-color: rgb(0,0,0,0);
+}
+
+.dropdown-TT a:nth-child(even):hover,
+.dropdown-TT a:nth-child(even):active {
+    background-color: rgb(0,0,0,0.1);
+}
+
+.dropdown-TT a:nth-child(odd){
+    background-color: rgb(0,0,0,0.03);
+}
+.dropdown-TT a:nth-child(odd):hover,
+.dropdown-TT a:nth-child(odd):active {
+    background-color: rgb(0,0,0,0.1);
+}
+
+.dropdown-QH{
+    position: absolute;
+    height:11rem;
+    width: 100%;
+    background-color: white;
+    border-radius: .25rem;
+    z-index: 1;
+    overflow: auto;
+    white-space: nowrap;
+    transform: scaleY(0);
+    opacity:0 ;
+    transform-origin: top;
+    transition: all 500ms ease-in-out  ;
+    color:black;
+}
+
+.btn-huyen:focus ~ .dropdown-QH{
+    transform: scaleY(1);
+    opacity: 1;
+}
+.dropdown-QH a{
+    display: block;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: black;
+    text-transform: none;
+}
+.dropdown-QH a:hover{
+    text-decoration: none;;
+}
+
+.dropdown-QH a:nth-child(even) {
+    background-color: rgb(0,0,0,0);
+}
+.dropdown-QH a:nth-child(even):hover,
+.dropdown-QH a:nth-child(even):active {
+    background-color: rgb(0,0,0,0.1);
+}
+
+
+.dropdown-QH a:nth-child(odd){
+    background-color: rgb(0,0,0,0.03);
+}
+.dropdown-QH a:nth-child(odd):hover,
+.dropdown-QH a:nth-child(odd):active {
+    background-color: rgb(0,0,0,0.1);
+}
+
+
+.book-form .search-btn{
+    background-color: rgb(255, 205, 97);
+    margin-top:1rem;
+    height: 3.25rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+}
+
+.book-form .search-btn:hover{
+    opacity: 0.8;
+    box-shadow:  0 0 6px white;
+}
+
+/* BODY SECTION*/
+
+#bodySection{
+    height: 180vh;
+    background-color: rgb(204, 204, 204);
+    padding:  5rem 5rem;
+}
+
+#bodySection h2{
+    font-family: 'Playball', cursive;
+    font-size: 3rem ;
+    text-align: center;
+    position: relative;
+}
+
+#bodySection h2::before{
+    position: absolute;
+    content: "";
+    top: 48%;
+    right: 100%;
+    bottom: 48%;
+    left: -100%;
+    background:  linear-gradient(to left,rgb(196, 4, 4,1),rgb(196, 4, 4, 0)) ;
+
+}
+#bodySection h2::after{
+    position: absolute;
+    content: "";
+    top: 48%;
+    right: -100%;
+    bottom: 48%;
+    left: 100%;
+    background:  linear-gradient(to right,rgb(196, 4, 4,1),rgb(196, 4, 4, 0)) ;
+
+}
+
+
+#bodySection .find2,.room2{
+    color:rgb(196, 4, 4);
+}
+.header2{
+    width: 15%;
+    margin: 0 auto;
+}
+
+#bodySection p{
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+}
+#bodySection ol{
+    list-style: none;
+    width:40%;
+    margin: 0 auto;
+    height: 30vh;
+    z-index: 1;
+}
+
+#bodySection ol button{
+    border: none;
+    background-color:rgb(204, 204, 204) ;
+    color:rgb(0,0,0,0.5);
+    transition: all 150ms ease-in-out ;
+    font-weight: 600;
+    width: 100%;
+}
+
+#bodySection ol button:hover{
+    color: black;
+}
+#bodySection ol button:focus{
+    color: black;
+    text-shadow:  2px 2px 6px rgb(0,0,0,0.3);
+    box-shadow: inset 0 0 6px white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content1,.content2,.content3{
+    width:33%;
+    height:100%;
+}
+
+.drop-gia{
+    height:100%;
+    overflow: auto;
+    white-space: nowrap;
+    height: 50%;
+    position: relative;
+    opacity:0 ;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+
+
+
+.btn-gia:focus ~ .drop-gia{
+    transform: scaleY(1);
+    opacity:1;
+}
+
+
+
+.contain ::-webkit-scrollbar {
+    display: none;
+}
+
+.drop-loai{
+    height:100%;
+    overflow: auto;
+    white-space: nowrap;
+    height: 50%;
+    position: relative;
+    opacity:0 ;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+
+.btn-loai:focus ~ .drop-loai{
+    transform: scaleY(1);
+    opacity:1;
+}
+
+.drop-tinhtrang{
+    height:100%;
+    overflow: auto;
+    white-space: nowrap;
+    height: 50%;
+    position: relative;
+    opacity:0 ;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+.btn-tinhtrang:focus ~ .drop-tinhtrang{
+    transform: scaleY(1);
+    opacity:1;
+}
+
+
+.contain a:nth-child(even){
+    background-color: rgb(0,0,0,0);
+}
+
+.contain a:nth-child(odd){
+    background-color: rgb(0,0,0,0.02);
+}
+
+.contain  a{
+    display: block;
+    text-align: center;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+}
+.contain a:hover{
+    text-decoration: none;
+    background-color: rgb(0,0,0,0.1);
+}
+
+.card-container{
+    margin-top:-8rem;
+    height:80%;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   z-index: -1;
+   transition: all .5s ease-in-out;
+}
+
+.card-container .item{
+    max-width: 27.3vw;
+    max-height: 57vh;
+    width:100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-container .img-contain::before{
+    content: '';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: black;
+    opacity: 0;
+
+    transition: all 200ms ease-in-out;
+}
+.img-contain{
+    transition: all 200ms ease-in-out;
+}
+
+
+.item img{
+    width:100%;
+    height: 100%;
+}
+
+.item:hover .img-contain{
+    transform: scale(1.05);
+
+}
+.item:hover .img-contain::before {
+    opacity: 0.6;
+}
+.text-contain{
+    position: absolute;
+    top:33%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color:white;
+    text-align: center;
+    
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.text-contain h1{
+   font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 300;
+}
+.text-contain p{
+    font-family: 'Source Serif Pro', serif;
+    font-size: 5rem;
+}
+.text-contain .price{
+    font-family: 'Source Serif Pro', serif;
+    font-size:  2rem;
+}
+
+.item:hover .text-contain{
+    top:30%;
+    opacity: 1;
+}
+
+.logo1{
+    grid-column: 8/8;
+    position: absolute;
+    padding-top:0 ;
+    top:30%;
+    left:45%;
+    right: 45%;
+    bottom: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.logo1 svg{
+    width:2rem;
+    height:2rem;
+}
+
+@media all and (max-device-width : 280px){
+    #headerSection{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr ;
+        grid-template-columns:0.1fr  1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr;
+    }
+    .welcome{
+        font-size: 0.5rem;
+    }
+    .infoNav{
+        grid-column: 5/9;
+    }
+    .navbar1 svg{
+        margin-top: 5px;
+        height: 10px;
+    }
+    .logo span{
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+        margin-top: 7rem;
+    }
+    .navbar2{
+        padding: 0;
+        height: 10vh;
+        /* height: 20vh; */
+
+    }
+   
+    .home-log-reg{  
+        margin: 0;
+        margin-top:4rem ;
+        grid-column:1/9;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0,0,0,0.3);
+        flex: 1 1 100%;
+        z-index: 1;
+        transform: scaleY(0);
+        opacity: 0;
+        transform-origin: top;
+        transition: all 500ms ease-in-out;
+    }
+   .home-log-reg a{
+       font-size:1rem;
+        color:white;
+   }
+   
+   .logo1{
+       padding-top: 0;
+       display: block;
+       position: absolute;
+       left: 0;
+       right: 0;
+       top:20%;
+      bottom: 0;
+      height: 55%;
+      width: 100%;
+      background-color:rgb(0,0,0,0) ;
+      border: none; 
+   }
+   .logo1 svg{
+        position: absolute;
+        left: 0;
+       right: 0;
+       top:0;
+      bottom: 0;
+        margin-top: 0.5rem;
+   }
+   .logo1:hover ~   .home-log-reg{
+       transform: scaleY(1);
+       opacity: 1;
+   }
+   .location{
+       margin-top:0;
+       z-index: 0;
+       grid-column: 2/10;
+       padding:0.5rem;
+   }
+   .book-form{
+       grid-column: 2/5;
+       padding: 3px;
+   }
+    .book-form h2{
+        margin-top:-0.5rem;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+   .book-form small{
+    font-size: 1rem;
+    text-align: left;
+   }
+   .book-form .btn-tinh{
+       font-size: .75rem;
+       height: 2.5rem;
+   }
+   .book-form .btn-huyen{
+       font-size: .75rem;
+        height: 2.5rem;
+   }
+   .book-form .search-btn{
+       height:2.75rem;
+   }
+   /* Section2 */
+   #bodySection{
+       position: relative;
+       padding: 2rem 2rem;
+       height: 80vh;
+   }
+    .header2{
+           position: absolute;
+            left: -35%;
+            right: 0;
+            top:0;
+            bottom: 0;
+       }
+        #bodySection h2::before{
+            position: absolute;
+            left: -3rem;
+            right: 2.2rem;
+            top:55%;
+            bottom: 40%;
+        }
+
+       #bodySection h2::after {
+           position: absolute;
+            left:12rem;
+            right: -14rem;
+            top:55%;
+            bottom:40%;
+       }
+       #bodySection p{
+           font-size: 0.8rem;
+       }
+       #bodySection ol{
+           width:100%;
+       }
+       #bodySection ol button{
+               font-size: 0.62rem;
+       }
+       .drop-gia,.drop-tinhtrang,.drop-loai{
+           font-size: 0.62rem;
+       }
+       .card-container .img-contain::before{
+           height:100%;
+       }
+    .card-container{
+        margin-top:-10rem;
+        height: 45vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+    }
+    .card-container .item {
+        margin-bottom: 6.8rem;
+        height: 88%;
+    }
+    .text-contain h1{
+        font-size: 1.25rem;
+    }
+   
+.text-contain .price{
+        font-size: 0.75rem;
+    }
+}
+
+@media all and (min-device-width:281px) and (max-device-width : 539px){
+    #headerSection{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr ;
+        grid-template-columns:0.1fr  1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr;
+    }
+    .welcome{
+        font-size: 0.5rem;
+    }
+    .infoNav{
+        grid-column: 5/9;
+    }
+    .navbar1 svg{
+        margin-top: 5px;
+        height: 10px;
+    }
+    .logo span{
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+        margin-top: 7rem;
+    }
+    .navbar2{
+        padding: 0;
+        height: 10vh;
+
+    }
+   
+    .home-log-reg{  
+        margin: 0;
+        margin-top:4rem ;
+        grid-column:1/9;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0,0,0,0.3);
+        flex: 1 1 100%;
+        z-index: 1;
+        transform: scaleY(0);
+        opacity: 0;
+        transform-origin: top;
+        transition: all 500ms ease-in-out;
+    }
+   .home-log-reg a{
+       font-size:1rem;
+        color:white;
+   }
+   
+   .logo1{
+       padding-top: 0;
+       display: block;
+       position: absolute;
+       left: 0;
+       right: 0;
+       top:20%;
+      bottom: 0;
+      height: 55%;
+      width: 100%;
+      background-color:rgb(0,0,0,0) ;
+      border: none; 
+   }
+   .logo1 svg{
+        position: absolute;
+        left: 0;
+       right: 0;
+       top:0;
+      bottom: 0;
+        margin-top: 0.5rem;
+   }
+   .logo1:hover ~   .home-log-reg{
+       transform: scaleY(1);
+       opacity: 1;
+   }
+   .location{
+       margin-top:0;
+       z-index: 0;
+       grid-column: 2/10;
+       padding:0.5rem;
+   }
+   .book-form{
+       grid-column: 2/5;
+       padding: 3px;
+   }
+    .book-form h2{
+        margin-top:-0.5rem;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    .book-form p{
+        margin-top:7%;
+    }
+   .book-form small{
+    font-size: 1rem;
+    text-align: left;
+   }
+   .book-form .btn-tinh{
+       font-size: .75rem;
+       height: 2.5rem;
+   }
+   .book-form .btn-huyen{
+       font-size: .75rem;
+        height: 2.5rem;
+   }
+   .book-form .search-btn{
+       height:2.75rem;
+   }
+   /* Section2 */
+   #bodySection{
+       height: 111vh;
+       padding: 5rem 2rem;
+   }
+    .header2{
+           position: absolute;
+            left: -20%;
+            right: 0;
+            top:0;
+            bottom: 0;
+       }
+        #bodySection h2::before{
+            position: absolute;
+            left: -5rem;
+            right:3.5rem;
+            top:55%;
+            bottom: 40%;
+        }
+
+       #bodySection h2::after {
+           position: absolute;
+            left:12rem;
+            right: -14rem;
+            top:55%;
+            bottom:40%;
+       }
+       #bodySection p{
+           font-size: 0.8rem;
+       }
+       #bodySection ol{
+           width:100%;
+       }
+       #bodySection ol button{
+               font-size: 0.62rem;
+       }
+       .drop-gia,.drop-tinhtrang,.drop-loai{
+           font-size: 0.62rem;
+       }
+       .card-container .img-contain::before{
+           height:100%;
+       }
+    .card-container{
+        margin-top:-10rem;
+         height: 80vh;
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 0;
+    }
+    .card-container .item {
+        margin-bottom: 6.8rem;
+        height: 88%;
+        max-width: 37vw;
+    }
+    .text-contain h1{
+        font-size: 1.25rem;
+    }
+   
+    .text-contain .price{
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+} 
+@media all and (min-device-width:540px) and (max-device-width : 749px){
+    #headerSection{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr ;
+        grid-template-columns:0.1fr  1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr;
+    }
+    .welcome{
+        font-size: 0.5rem;
+    }
+    .infoNav{
+        grid-column: 5/9;
+    }
+    .navbar1 svg{
+        margin-top: 5px;
+        height: 10px;
+    }
+    .logo span{
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+        margin-top: 7rem;
+    }
+    .navbar2{
+        padding: 0;
+        height: 10vh;
+
+    }
+   
+    .home-log-reg{  
+        margin: 0;
+        margin-top:4rem ;
+        grid-column:1/9;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0,0,0,0.3);
+        flex: 1 1 100%;
+        z-index: 1;
+        transform: scaleY(0);
+        opacity: 0;
+        transform-origin: top;
+        transition: all 500ms ease-in-out;
+    }
+   .home-log-reg a{
+       font-size:1rem;
+        color:white;
+   }
+   
+   .logo1{
+       padding-top: 0;
+       display: block;
+       position: absolute;
+       left: 0;
+       right: 0;
+       top:20%;
+      bottom: 0;
+      height: 55%;
+      width: 100%;
+      background-color:rgb(0,0,0,0) ;
+      border: none; 
+   }
+   .logo1 svg{
+        position: absolute;
+        left: 0;
+       right: 0;
+       top:0;
+      bottom: 0;
+        margin-top: 0.5rem;
+   }
+   .logo1:hover ~   .home-log-reg{
+       transform: scaleY(1);
+       opacity: 1;
+   }
+   .location{
+       margin-top:0;
+       z-index: 0;
+       grid-column: 2/10;
+       padding:0.5rem;
+   }
+   .book-form{
+       grid-column: 2/5;
+       padding: 3px;
+   }
+    .book-form h2{
+        margin-top:-0.5rem;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    .book-form p{
+        margin-top:7%;
+    }
+   .book-form small{
+    font-size: 1rem;
+    text-align: left;
+   }
+   .book-form .btn-tinh{
+       font-size: .75rem;
+       height: 2.5rem;
+   }
+   .book-form .btn-huyen{
+       font-size: .75rem;
+        height: 2.5rem;
+   }
+   .book-form .search-btn{
+       height:2.75rem;
+   }
+   /* Section2 */
+   #bodySection{
+       height: 130vh;
+       padding: 5rem 2rem;
+   }
+    .header2{
+           position: absolute;
+            left: -12%;
+            right: 0;
+            top:0;
+            bottom: 0;
+       }
+        #bodySection h2::before{
+            position: absolute;
+            left: -7rem;
+            right:4.75rem;
+            top:55%;
+            bottom: 40%;
+        }
+
+       #bodySection h2::after {
+           position: absolute;
+            left:12rem;
+            right: -14rem;
+            top:55%;
+            bottom:40%;
+       }
+       #bodySection p{
+           font-size: 0.8rem;
+       }
+       #bodySection ol{
+           width:100%;
+       }
+       #bodySection ol button{
+               font-size: 0.62rem;
+       }
+       .drop-gia,.drop-tinhtrang,.drop-loai{
+           font-size: 0.62rem;
+       }
+       .card-container .img-contain::before{
+           height:100%;
+       }
+    .card-container{
+        margin-top:-10rem;
+         height: 100vh;
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 0;
+    }
+    .card-container .item {
+        margin-bottom: 6.8rem;
+        height: 88%;
+        max-width: 37vw;
+    }
+    .text-contain h1{
+        font-size: 1.25rem;
+    }
+     .text-contain .price{
+        font-size: 1rem;
+    }
+} 
+
+@media all and (min-device-width:750px) and (max-device-width : 1024px){
+    #headerSection{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr ;
+        grid-template-columns:0.1fr  1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr;
+        height: 60vh;
+    }
+    .welcome{
+        font-size: 0.5rem;
+    }
+    .infoNav{
+        grid-column: 5/9;
+    }
+    .navbar1 svg{
+        margin-top: 5px;
+        height: 10px;
+    }
+    .logo span{
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+        margin-top: 7rem;
+    }
+    .navbar2{
+        padding: 0;
+        height: 10vh;
+
+    }
+   
+    .home-log-reg{  
+        margin: 0;
+        margin-top:4rem ;
+        grid-column:5/8;
+        width: 100%;
+
+        flex: 1 1 100%;
+        z-index: 1;
+
+    }
+   .home-log-reg a{
+       font-size:1rem;
+        color:white;
+   }
+
+   .location{
+       margin-top:0;
+       z-index: 0;
+       grid-column: 3/9;
+       padding:0.5rem;
+   }
+   .bg-form {
+       height: 100%;
+   }
+   .book-form{
+       grid-column: 2/5;
+       padding: 3px;
+   }
+    .book-form h2{
+        margin-top:-0.5rem;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+   .book-form small{
+    font-size: 1rem;
+    text-align: left;
+   }
+   .book-form .btn-tinh{
+       font-size: .75rem;
+       height: 2.5rem;
+   }
+   .book-form .btn-huyen{
+       font-size: .75rem;
+        height: 2.5rem;
+   }
+   .book-form .search-btn{
+       height:2.75rem;
+   }
+   /* Section2 */
+   #bodySection{
+       height: 100vh;
+       padding: 5rem 2rem;
+   }
+    .header2{
+           position: absolute;
+            left: -5%;
+            right: 0;
+            top:0;
+            bottom: 0;
+       }
+        #bodySection h2::before{
+            position: absolute;
+            left: -10rem;
+            right:7.25rem;
+            top:55%;
+            bottom: 40%;
+        }
+
+       #bodySection h2::after {
+           position: absolute;
+            left:12rem;
+            right: -14rem;
+            top:55%;
+            bottom:40%;
+       }
+       #bodySection p{
+           font-size: 0.8rem;
+       }
+       #bodySection ol{
+           width:100%;
+       }
+       #bodySection ol button{
+               font-size: 0.62rem;
+       }
+       .drop-gia,.drop-tinhtrang,.drop-loai{
+           font-size: 0.62rem;
+       }
+       .card-container .img-contain::before{
+           height:100%;
+       }
+    .card-container{
+        margin-top:-10rem;
+         height: 55vh;
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0 0;
+    }
+    .card-container .item {
+        margin-bottom: 6.8rem;
+        height: 90%;
+        max-width: 37vw;
+        width: 90%;
+    }
+    .text-contain h1{
+        font-size: 1.25rem;
+    }
+
+    .text-contain .price{
+        font-size: 1rem;
+    }
+} 
