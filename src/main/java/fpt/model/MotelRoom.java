@@ -62,15 +62,7 @@ public class MotelRoom extends ModelCommon {
 	@OneToMany
 	@JoinColumn(name = "roomId", referencedColumnName = "roomId", insertable = true, updatable = true)
 	private List<MotelRoom_Criteria> motelRoom_Criteria;
-	
-	@OneToOne
-	@JoinColumn(name = "provinceId", referencedColumnName = "provinceId", insertable = false, updatable = false)
-	private Province province;
-	
-	@OneToOne
-	@JoinColumn(name = "districtId", referencedColumnName = "districtId", insertable = false, updatable = false)
-	private District district;
-	
+
 	@OneToOne
 	@JoinColumn(name = "wardId", referencedColumnName = "wardId", insertable = false, updatable = false)
 	private Ward ward;
@@ -101,8 +93,7 @@ public class MotelRoom extends ModelCommon {
 
 	public MotelRoom(int roomId, boolean roomStatus, String roomName, int acreage, int price, String address,
 			int provinceId, int districtId, int wardId, int maxPeople, int accountId, Account account,
-			List<Image> image, List<MotelRoom_Criteria> motelRoom_Criteria, Province province, District district,
-			Ward ward, List<Post> post) {
+			List<Image> image, List<MotelRoom_Criteria> motelRoom_Criteria, Ward ward, List<Post> post) {
 		super();
 		this.roomId = roomId;
 		this.roomStatus = roomStatus;
@@ -118,8 +109,6 @@ public class MotelRoom extends ModelCommon {
 		this.account = account;
 		this.image = image;
 		this.motelRoom_Criteria = motelRoom_Criteria;
-		this.province = province;
-		this.district = district;
 		this.ward = ward;
 		this.post = post;
 	}
@@ -234,22 +223,6 @@ public class MotelRoom extends ModelCommon {
 
 	public void setMotelRoom_Criteria(List<MotelRoom_Criteria> motelRoom_Criteria) {
 		this.motelRoom_Criteria = motelRoom_Criteria;
-	}
-
-	public Province getProvince() {
-		return province;
-	}
-
-	public void setProvince(Province province) {
-		this.province = province;
-	}
-
-	public District getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(District district) {
-		this.district = district;
 	}
 
 	public Ward getWard() {

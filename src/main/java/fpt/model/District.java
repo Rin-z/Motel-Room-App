@@ -21,7 +21,7 @@ public class District {
 	@Column(name = "districtId")
 	private int districtId;
 	
-	@Column(name = "districtName")
+	@Column(name = "districtName", columnDefinition = "varchar(50) not null")
 	private String districtName;
 	
 	@Column(name = "kind")
@@ -35,11 +35,7 @@ public class District {
 	
 	@Column(name = "provinceId")
 	private int provinceId;
-	
-	@OneToMany
-	@JoinColumn(name = "districtId", referencedColumnName = "districtId", insertable = true, updatable = true)
-	private List<MotelRoom> motelRoom;
-	
+
 	@OneToOne
 	@JoinColumn(name = "provinceId", referencedColumnName = "provinceId", insertable = false, updatable = false)
 	private Province province;
@@ -64,7 +60,7 @@ public class District {
 	}
 
 	public District(int districtId, String districtName, String kind, float latitude, float longtitude, int provinceId,
-			List<MotelRoom> motelRoom, Province province, List<Ward> ward) {
+			Province province, List<Ward> ward) {
 		super();
 		this.districtId = districtId;
 		this.districtName = districtName;
@@ -72,7 +68,6 @@ public class District {
 		this.latitude = latitude;
 		this.longtitude = longtitude;
 		this.provinceId = provinceId;
-		this.motelRoom = motelRoom;
 		this.province = province;
 		this.ward = ward;
 	}
@@ -123,14 +118,6 @@ public class District {
 
 	public void setProvinceId(int provinceId) {
 		this.provinceId = provinceId;
-	}
-
-	public List<MotelRoom> getMotelRoom() {
-		return motelRoom;
-	}
-
-	public void setMotelRoom(List<MotelRoom> motelRoom) {
-		this.motelRoom = motelRoom;
 	}
 
 	public Province getProvince() {

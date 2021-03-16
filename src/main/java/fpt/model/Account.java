@@ -21,10 +21,10 @@ public class Account extends ModelCommon {
 	@Column(name = "accountId")
 	private int accountId;
 	
-	@Column(name = "username", columnDefinition = "varchar(50) not null")
+	@Column(name = "username", columnDefinition = "varchar(50)")
 	private String username;
 	
-	@Column(name = "password", columnDefinition = "varchar(50) not null")
+	@Column(name = "password", columnDefinition = "varchar(50)")
 	private String password;
 	
 	@Column(name = "role")
