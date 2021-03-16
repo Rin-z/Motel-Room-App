@@ -23,7 +23,7 @@ public class LoginController {
 	@RequestMapping("/")
 	public String home() {
 		
-		return "login";
+		return "home";
 	}
 	
 	@RequestMapping("/login")
