@@ -1,5 +1,7 @@
 package fpt.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +15,9 @@ public class PostController {
 	private PostService postService;
 	
 	@RequestMapping("/post")
-	public String showAll(Model model) {
-		model.addAttribute("post", postService.findAll());
+	public String showAll(HttpServletRequest request) {
+		request.setAttribute("post", postService.findAll());
+		request.setAttribute("post2", postService.findAllAvailability());
 		return "accountHome";
 	}
 }
